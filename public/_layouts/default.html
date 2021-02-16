@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/init.js"></script>
+
+<script src="/scripts/mods.js"></script>
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+	  
+	<input type="edit" id="percentage">
+	<input type="button" id="percentageMove" value="percentageMove" onclick="percentageMove()">
+	<input type="button" id="pageMove" value="pageMove" onclick="pageMove()">
+
+	  <h3>
+        {{ content }}
+		</h3>
+		
+<img src='/imgs/next.png' onClick="move('plus')"><br>
+<input type="email" id="email"><br>
+<input type="password" id="password"><br>
+<input type="button" id="login" value="login" onclick="emailLogin()">
+<input type="button" id="logout" value="logout" onclick="logout()">
+<input type="button" id="prev" value="prev" onclick="move('minus')">
+<input type="button" id="next" value="next" onclick="move('plus')">
+
+      </div>
+    </main>
+
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>
